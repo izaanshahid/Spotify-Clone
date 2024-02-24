@@ -4,7 +4,7 @@ import { Text, View } from '@/src/components/Themed';
 import TrackListItem from '@/src/components/trackListItem';
 
 
-export default function TabOneScreen() {
+export default function HomeScreen() {
   return (
       <FlatList
       data={tracks}
