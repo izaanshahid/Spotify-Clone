@@ -5,7 +5,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import PlayerProvider from '../providers/PlayerProvider';
-
+import ApolloClientProvider from '../providers/ApolloClientProvider';
 import { useColorScheme } from '@/src/components/useColorScheme';
 
 export {
@@ -50,12 +50,14 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <ApolloClientProvider>
       <PlayerProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
       </Stack>
       </PlayerProvider>
+      </ApolloClientProvider>
     </ThemeProvider>
   );
 }
